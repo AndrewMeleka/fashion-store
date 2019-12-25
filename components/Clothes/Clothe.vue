@@ -12,12 +12,8 @@
       <button
         class="btn secondary"
         @click="ToCart(clotheData.title, !clotheData.inCart)"
-      >
-        {{ clotheData.inCart ? "Delete From Cart" : "Add To Cart" }}
-      </button>
-      <button class="btn primary" @click="payMe(clotheData.title)">
-        Buy Now !
-      </button>
+      >{{ clotheData.inCart ? "Delete From Cart" : "Add To Cart" }}</button>
+      <button class="btn primary" @click="payMe(clotheData)">Buy Now !</button>
     </div>
   </div>
 </template>

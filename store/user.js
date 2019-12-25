@@ -38,7 +38,13 @@ export const mutations = {
     return (state.moneyHave -= payload);
   },
   addPaymenytHistory(state, payload) {
-    state.historyBuy.push(payload);
+    if (Array.isArray(payload)) {
+      for (let i = 0; i < payload.length; i++) {
+        state.historyBuy.push(payload[i]);
+      }
+    } else {
+      state.historyBuy.push(payload);
+    }
   }
 };
 export const getters = {
