@@ -1,0 +1,227 @@
+// Imports
+@import "imports/variables";
+
+//Default Styles
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	user-select: none; /* supported by Chrome and Opera */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	background-color: $dark;
+	color: $light;
+	font-family: "Source Code Pro", monospace, Arial, Helvetica, sans-serif;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-transform: capitalize;
+	text-decoration: none;
+	color: $gold;
+}
+//inputs
+input[type="text"],
+input[type="password"] {
+	width: 400px;
+	color: $light;
+	background-color: #232222;
+	outline: none;
+	border: none;
+	padding: 10px 30px;
+	font-size: 22px;
+	transition: all 0.4s ease-in-out;
+	&:active,
+	&:focus {
+		color: $gold;
+		border-left: 10px solid $gold;
+	}
+}
+//buttons
+.btn {
+	cursor: pointer;
+	padding: 10px 30px;
+	border: none;
+	font-size: 18px;
+	transition: all 0.2s ease-in-out;
+	svg {
+		margin: 0 10px;
+	}
+	&:active,
+	&:focus {
+		border: none;
+		outline: none;
+	}
+}
+.secondary {
+	background-color: $dark0;
+	color: $gold;
+	&:hover {
+		outline: 2px solid $gold;
+	}
+}
+.primary {
+	background-color: $gold;
+	color: $dark0;
+
+	&:hover {
+		outline: 2px solid #ffffff;
+	}
+}
+.actionBtns {
+	flex-direction: column;
+	display: flex;
+	> button {
+		margin-bottom: 5%;
+	}
+}
+//alerts
+.containAlerts {
+	position: fixed;
+	top: 10%;
+	left: 0;
+	z-index: 99999;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	.alert {
+		width: 70%;
+		display: flex;
+		margin-bottom: 10px;
+		font-size: 18px;
+		padding: 20px 40px;
+		.icon {
+			display: flex;
+			align-items: center;
+			align-content: center;
+			border-left: 2px solid $gold;
+			margin-left: 40px;
+			padding-left: 10px;
+			svg {
+				cursor: pointer;
+			}
+		}
+	}
+	.blue {
+		background-color: $blue;
+		box-shadow: 0px -1px 13px 0px $blue;
+	}
+	.danger {
+		background-color: $red;
+		box-shadow: 0px -1px 13px 0px $red;
+	}
+	.success {
+		background-color: $green;
+		box-shadow: 0px -1px 13px 0px $green;
+	}
+}
+
+.nuxt-link-exact-active {
+	color: $gold;
+}
+.myOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $dark;
+	z-index: 99;
+	opacity: 0.7;
+}
+.cost {
+	color: $gold;
+}
+// NavBar + drawer
+.navScroll {
+	position: fixed !important;
+	height: 80px !important;
+}
+#myNav {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	transition: all 0.7s linear;
+	width: 100%;
+	background-color: $dark;
+	color: $light;
+	padding: 10px;
+	.myLogo {
+		@media screen and (max-width: 600px) {
+			font-size: 22px;
+		}
+		font-size: 33px;
+	}
+	.containList {
+		ul {
+			margin: 0;
+			list-style: none;
+			display: flex;
+			li {
+				cursor: pointer;
+				font-size: 18px;
+				padding: 10px;
+				margin: 10px;
+				transition: all 0.5s ease-in-out;
+				&:hover {
+					color: $gold;
+				}
+			}
+		}
+	}
+}
+.cartList {
+	padding: 20px;
+	color: $dark;
+	position: absolute;
+	top: 100%;
+	right: 1%;
+	width: 400px;
+	background-color: $gold;
+	box-shadow: 3px 3px 15px 10px #000;
+	ul {
+		flex-direction: column !important;
+		margin: 5% 0 !important;
+		li {
+			border-radius: 10px;
+			margin-bottom: 20px;
+			background-color: white;
+			padding: 20px;
+			&:hover {
+				background-color: $red;
+				color: $light !important;
+			}
+		}
+	}
+}
+#drawerMobile {
+	background-color: $dark;
+	color: $light;
+	ul {
+		> li {
+			padding: 20px;
+			cursor: pointer;
+		}
+	}
+}
+
+//footer
+footer {
+	padding: 20% 0;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	div {
+		font-size: 30px;
+	}
+}
